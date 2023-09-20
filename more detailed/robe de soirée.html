@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankara Shop</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <H1 style="color: pink;"> <a class="none"href="C:\Users\ACER\Desktop\marketing website project\marketing project html 1.HTML">Ankara.Shop</a></H1>
+            <p style="color: pink;"><a class="none" href="C:\Users\ACER\Desktop\marketing website project\about.html">About</a></p>
+            <p style="color: pink;"> <a  class="none"href="C:\Users\ACER\Desktop\marketing website project\shop.html">Shop</a></p>
+        </div>
+            </header>
+
+            <main>
+                <div class="container">
+    <div class="image-box">
+ <img  class="card-img-top"src="c:\Users\ACER\Desktop\My favorites ankara clothes\Pin by Ndeyefatoujoop on Robe de soirée africaine _ African fashion ankara, Latest african fashion dresses, African fashion women clothing.jpeg" width="100%" height="100%"/>
+          </div>
+<hr>
+
+<div class="information">
+    <h1>This is a very cute dress</h1>
+    <p style="font-size: 50px;">25000</p>
+</div>
+
+<hr>
+<div class="btn">
+    <input type="number" value="1" min="1" class="quantity-input" style="width: 35px;">
+    <button class="increase">+</button>
+    <button class="decrease">-</button>
+    
+    <br>
+    <span class="subtotal"  style="font-size: 50px;">25000</span>
+
+    <div>
+   <a href="C:\Users\ACER\Desktop\marketing website project\more detailed\congratulations.html"> <button class="Buy" style="color: pink;">Buy </button></a>
+</div>
+</div>      
+
+
+
+</div>
+
+            </main>
+</body>
+<style>/*this has been taken from "marketing so we can have the same header*/
+    header{border: solid;
+        color: #e19dbd;
+        background-color: #e19dbd;
+        border-radius: 10px;
+        height: 95px; 
+        position: sticky;
+        top: 0px;
+        z-index: 100 }
+    
+        .nav{display: flex;
+            justify-content: space-between;
+            position: sticky;}
+    
+            div.nav>p{font-size: 30px;
+                color: pink;}
+    
+                a.none { color: inherit;
+                    text-decoration: none; }
+    
+    /*this is for the container of the product*/
+    .container{width:450px;
+        height:250px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        margin: 20px auto;
+    
+        width: 100%;
+        height: 510px;
+        position: relative;
+    display: flex;
+    justify-content: space-between;}
+    
+    /*this is for the buttons they are a little bit to small*/
+    .btn{margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;}
+    
+    /*this is for the buy button*/
+    .Buy{border: none;
+    border-radius: 25px;
+    margin-top: 40px;
+    width: 150px;
+    cursor: pointer;}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('increase')) {
+            const quantityInput = event.target.parentElement.querySelector('.quantity-input');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateSubtotal(event.target);
+        } else if (event.target.classList.contains('decrease')) {
+            const quantityInput = event.target.parentElement.querySelector('.quantity-input');
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                updateSubtotal(event.target);
+            }
+        } else if (event.target.classList.contains('remove')) {
+            const cartItem = event.target.closest('.Cart-Items');
+            cartItem.style.display = 'none';
+        }
+    });
+
+    function updateSubtotal(clickedElement) {
+        const parentDiv = clickedElement.parentElement;
+        const quantityInput = parentDiv.querySelector('.quantity-input');
+        const subtotalSpan = parentDiv.querySelector('.subtotal');
+        const price = 25000; // Replace with actual item price
+        const quantity = parseInt(quantityInput.value);
+        const subtotal = price * quantity;
+        subtotalSpan.textContent = subtotal;
+    }
+});
+    </script>
+</html>
